@@ -2,8 +2,8 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server" ng-app="myApp">
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="myApp" >
+<head runat="server">
     <title></title>
     <%--stylesheets--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
@@ -34,8 +34,8 @@
                     <p>Lorem ipsum dolor..</p>
                     <p>Ut enim ad..</p>
                 </div>
-                <div class="col-sm-4">
-                    <h3>Column 3</h3>
+                <div class="col-sm-4" data-ng-controller="myCtrl">
+                    <h3>{{ firstName + " " + lastName }}</h3>
                     <p>Lorem ipsum dolor..</p>
                     <p>Ut enim ad..</p>
                 </div>
@@ -52,6 +52,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" type="text/javascript"></script>
-    <!-- Latest compiled and minified JavaScript -->
+    <script src="Script.js" type="text/javascript"></script>
 </body>
 </html>
