@@ -4,24 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="myApp" >
 <head runat="server">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <title></title>
     <%--stylesheets--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
 
-    <asp:ContentPlaceHolder id="head" runat="server">
-        
-        
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="globalForm" runat="server">
-    <div class="wrapper">
+    <div class="wrapper container">
         <%--navigation--%>
         <div class="jumbotron text-center">
-            <h1>My First Bootstrap Page</h1>
+            <h1>Welcome Vajrang</h1>
             <p>Resize this responsive page to see the effect!</p>
         </div>
-
+        
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
