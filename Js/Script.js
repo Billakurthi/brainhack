@@ -10,12 +10,12 @@
 
 
             
-        $http.get('http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC').
+                $http.get('http://rest-service.guides.spring.io/greeting').
                     then(function(response) {
                        
 
-                        $scope.firstName = response.data;
-                        $scope.lastName = response.data;
+                        $scope.firstName = response.data.content;
+                        $scope.lastName = response.data.id;
                     });
            
 
