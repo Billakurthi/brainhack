@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="myApp" >
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="myApp">
 <head runat="server">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title></title>
     <%--stylesheets--%>
@@ -13,42 +13,42 @@
     <link rel="stylesheet" href="App_Themes/MasterTheme/Global/global.css" type="text/css" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
-
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="globalForm" runat="server">
-    <div class="wrapper container">
-        <%--navigation--%>
-        <div class="jumbotron text-center">
-            <h1>Welcome Vajrang</h1>
-            <p>Resize this responsive page to see the effect!</p>
-        </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>Column 1</h3>
-                    <p>Lorem ipsum dolor..</p>
-                    <p>Ut enim ad..</p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>Column 2</h3>
-                    <p>Lorem ipsum dolor..</p>
-                    <p>Ut enim ad..</p>
-                </div>
-                <div class="col-sm-4" data-ng-controller="myCtrl">
-                    <h3>{{ firstName + " " + lastName }}</h3>
-                    <p>Lorem ipsum dolor..</p>
-                    <p>Ut enim ad..</p>
-                </div>
+        <div class="wrapper container">
+            <%--navigation--%>
+            <div class="jumbotron text-center">
+                <h1>Welcome Vajrang</h1>
+                <p>Resize this responsive page to see the effect!</p>
             </div>
-        </div>
 
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
+      
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Column 1</h3>
+                        <p>Lorem ipsum dolor..</p>
+                        <p>Ut enim ad..</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Column 2</h3>
+                        <p>Lorem ipsum dolor..</p>
+                        <p>Ut enim ad..</p>
+                    </div>
+                    <div class="col-sm-4" data-ng-controller="myCtrl">
+                        <h3>{{ firstName + " " + lastName }}</h3>
+                        <p>Lorem ipsum dolor..</p>
+                        <p>Ut enim ad..</p>
+                    </div>
+                </div>
+      
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-    </div>
+
+
+        </div>
     </form>
 
     <%--all script tags--%>
