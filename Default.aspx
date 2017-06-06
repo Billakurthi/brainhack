@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    Hello from Default Page
+    Hello world from Default Page
 
 </asp:Content>
 
