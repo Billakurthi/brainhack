@@ -104,7 +104,7 @@ gulp.task('styles', function () {
 
 gulp.task('serve', ['watch'], function () {
 	browserSync.init({
-	    proxy: "http://localhost:80/brainHack/",
+	    //proxy: "http://localhost:80/brainHack/",
 		browser: ["firefox"]
 	});
 

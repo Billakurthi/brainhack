@@ -1,2 +1,15 @@
+// import all variables
+@import "variables";
+// import all custom defaults
+@import "custom-defaults";
+// import all custom defaults
+@import "timeline";
+// import navigation styles
+@import "nav";
+// import content styles
+@import "content";
+// import footer styles
+@import "footer";
+//import masterpage styles
 @import 'masterPage';
 

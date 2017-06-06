@@ -1,0 +1,107 @@
+/*clear fix code using group*/
+.group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+* html .group {
+  zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .group {
+  zoom: 1;
+}
+
+/* IE7 */
+/*clear fix code*/
+
+
+// custom variable declaration
+$bg-img-path: "../../../assets/images/";
+$theme-color:#3baf84;
+$theme-heading-color: $theme-color;
+
+h1,h2,h3,h4,h5,h6{
+  color: $theme-heading-color !important;
+}
+
+.panel-heading{
+  margin-top: 0;
+}
+// custom text color
+.badge{
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+//custom style changes of bootstrap
+
+a,a:hover,a:active{
+
+  color:#FFF;
+  cursor: pointer;
+}
+
+body{
+ 
+ background-color: #777;
+
+}
+.wrapper{
+  min-width: 320px;
+}
+.container{
+
+//border:1px solid red;
+background-color: #fff;
+      
+}
+
+.initial-details {
+  margin-bottom:20px;
+  
+      > .row{
+    background-color: $theme-color;
+    }
+}
+
+.profile-img{
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+
+
+.highlights{
+ 
+  color: #fff;
+}
+
+.contact-details {
+
+span{
+
+
+    @media (max-width : $screen-sm-min ){
+display: inline-block;
+  }
+
+}
+
+}
+
+#accordion{
+  .panel-title{
+    a{
+      display: inline-block;
+      width:100%;
+      text-align:center;
+    }
+  }
+}
