@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IACA;EACK,MAAM,EAAE,aAAa",
+"sources": ["_masterPage.scss"],
+"names": [],
+"file": "global.css"
+}

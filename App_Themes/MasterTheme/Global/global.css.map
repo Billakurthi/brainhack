@@ -1,0 +1,1 @@
+{"version":3,"sources":["_masterPage.scss"],"names":[],"mappings":"AAAA,OAEK,wBAAuB,EAC3B","file":"global.css","sourcesContent":["body\r\n{\r\n     border: 1px solid green;\r\n}"]}

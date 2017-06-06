@@ -10,6 +10,7 @@
     <title></title>
     <%--stylesheets--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="App_Themes/MasterTheme/Global/global.css" type="text/css" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 
@@ -54,6 +55,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" type="text/javascript"></script>
-    <script src="Script.js" type="text/javascript"></script>
+    <script src="Js/Script.js" type="text/javascript"></script>
 </body>
 </html>
