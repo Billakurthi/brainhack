@@ -10,7 +10,7 @@
 
 
             
-        $http.get('http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC').
+        $http.get('http://api.giphy.com/v1/gifs/search?q=funny+sex&limit=100&api_key=dc6zaTOxFJmzC').
                     then(function(response) {
                         var results = response.data.data;
 
