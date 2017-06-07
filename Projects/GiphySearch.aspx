@@ -4,7 +4,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    Giphy Search Page
+    Giphy Search Page{{count}}
+    <%--search control--%>
+<%--    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..."/>
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+        </span>
+    </div>--%>
+    <!-- /input-group -->
+    <div class="input-group">
+    <asp:TextBox ID="inputGiphySearch" runat="server" class="form-control" ng-model="inputGiphySearch"></asp:TextBox>
+        <span class="input-group-btn">
+        <asp:Button class="btn btn-de" runat="server" Text="Search Giphy" ng-click="searchGiphyDB()" OnClientClick="return false;"/>
+        </span>
+    </div>
     <div class="row">
         
         <div class="col-xs-12 col-sm-4 col-md-2" data-ng-repeat="result in results" style="border:1px solid;">
