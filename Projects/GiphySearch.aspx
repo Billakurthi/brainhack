@@ -7,7 +7,7 @@
     Giphy Search Page
     <div class="row">
         
-        <div class="col-xs-6 col-sm-4 col-md-3" data-ng-repeat="result in results">
+        <div class="col-xs-12 col-sm-4 col-md-3" data-ng-repeat="result in results">
             <img style="width:100%; height:auto;" src="{{result.images.downsized.url}}" alt="{{result.type}}" title="{{result.type}}" />
         </div>         
 
