@@ -14,7 +14,7 @@
 
 
             
-        $http.get('http://api.giphy.com/v1/gifs/search?q=funny+sex&limit=20&api_key=dc6zaTOxFJmzC').
+        $http.get('http://api.giphy.com/v1/gifs/search?q=i%20love%20you&limit=100&api_key=dc6zaTOxFJmzC').
                     then(function(response) {
                         var results = response.data.data;
 
