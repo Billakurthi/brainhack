@@ -13,7 +13,7 @@
             <div class="col-xs-8 col-sm-9">
                 <div class="highlights">
                     <p class="name">
-                        Avinash B
+                        Vajrang
                     </p>
                     <p class="designation">
                         Senior Software Engineer

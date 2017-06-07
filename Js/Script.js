@@ -10,7 +10,7 @@
 
 
             
-                $http.get('http://rest-service.guides.spring.io/greeting').
+        $http.get('http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC').
                     then(function(response) {
                        
 
