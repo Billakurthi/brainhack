@@ -28,7 +28,7 @@
 
     myApp.factory('giphySearchService', ['$http', function giphySearchService($http) {
 
-        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=suck%20my%20cock&limit=100&api_key=dc6zaTOxFJmzC';
+        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=good%20night&limit=100&api_key=dc6zaTOxFJmzC';
 
         var result = function () {
 
