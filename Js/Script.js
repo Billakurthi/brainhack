@@ -2,55 +2,29 @@
 (function () { 
     'use strict';
 
-    var myApp = angular.module('myApp', []);
+    var myApp = angular.module('myApp',[]);
 
 
 
 
-    myApp.controller('myCtrl', ['$scope', 'giphySearchService', function ($scope, giphySearchService) {
+    var myCtrl =  function ($scope, giphySearchService) {
         $scope.count = 0;
         $scope.searchGiphyDB = function () {
             $scope.count++;
         };
-        giphySearchService.result().then(function (data) {
-            var gotres = data;
-            console.log("gotres" + gotres);
-            $scope.results = gotres;
+
+        giphySearchService
+            .result()
+            .then(function (recievedData) {
+                //initializing a promise to recieve the data in the future
+            $scope.results = recievedData;
         });
 
         
-    }]);
+    };   
 
-
-
-
-    
-
-    myApp.factory('giphySearchService', ['$http', function giphySearchService($http) {
-
-        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=good%20night&limit=100&api_key=dc6zaTOxFJmzC';
-
-        var result = function () {
-
-            
-
-            return ($http.get(apiQ)
-                .then(
-
-                function (response) {
-                    console.log(response.data.data);
-                    return response.data.data;
-
-                })
-                );
-        };
-
-        return {
-            result: result
-        };
-
-    }]);
-
+   
+    myApp.controller('myCtrl', ['$scope', 'giphySearchService', myCtrl]);
 
 
 
