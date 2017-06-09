@@ -1,30 +1,57 @@
-﻿
-//Declaring an IFFE function
-(function () {
+﻿//Declaring an IFFE function
+(function () { 
+    'use strict';
 
-    var app = angular.module("myApp", []);
-    
-    app.controller("myCtrl", function ($scope, $http) {
+    var myApp = angular.module('myApp', []);
+
+
+
+
+    myApp.controller('myCtrl', ['$scope', 'giphySearchService', function ($scope, giphySearchService) {
         $scope.count = 0;
         $scope.searchGiphyDB = function () {
             $scope.count++;
         };
-            
-
-
-
-            
-        $http.get('http://api.giphy.com/v1/gifs/search?q=i%20love%20you&limit=100&api_key=dc6zaTOxFJmzC').
-                    then(function(response) {
-                        var results = response.data.data;
-
-                        $scope.results = results;                      
-
-                      
-                    });
-           
-
-
+        giphySearchService.result().then(function (data) {
+            var gotres = data;
+            console.log("gotres" + gotres);
+            $scope.results = gotres;
         });
+
+        
+    }]);
+
+
+
+
     
+
+    myApp.factory('giphySearchService', ['$http', function giphySearchService($http) {
+
+        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=suck%20my%20cock&limit=100&api_key=dc6zaTOxFJmzC';
+
+        var result = function () {
+
+            
+
+            return ($http.get(apiQ)
+                .then(
+
+                function (response) {
+                    console.log(response.data.data);
+                    return response.data.data;
+
+                })
+                );
+        };
+
+        return {
+            result: result
+        };
+
+    }]);
+
+
+
+
 })();
