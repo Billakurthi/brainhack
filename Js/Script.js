@@ -22,34 +22,30 @@
 							var	searchRange = [];
 								for(var i=1;i<=100;i++){
 									searchRange.push(i);
-								}
-								console.log(searchRange);
-								
+								}			
 								$scope.resultsRange = searchRange;
 
 $scope.selectedName = "Search";
 
-$scope.resultsLimit = 40;
-
+			$scope.resultsLimit = {value : 30};		
 		
         $scope.searchGiphyDB = function () {
             $scope.count++;
-			if(
-				(($scope.inputGiphySearch).length != 0) 
-						&& 
-				(($scope.inputGiphySearch) != undefined)
-				){
-				
-				triggerSearch($scope.inputGiphySearch);
+			if(($scope.inputGiphySearch) === undefined){
+				return 0;
+			}else if (($scope.inputGiphySearch).length != 0) {
+					var inputString = ($scope.inputGiphySearch).replace(/ /g, "+")
+				var d = $scope.resultsLimit.value;
+				triggerSearch(inputString,d);
 			
 			}
 			
         };
 
-		var triggerSearch = function(searchString){
+		var triggerSearch = function(searchString,d){
 			
 			giphySearchService
-            .result(searchString)
+            .result(searchString,d)
             .then(function (recievedData) {
                 //initializing a promise to recieve the data in the future
             $scope.results = recievedData;
