@@ -20,7 +20,7 @@
 								
 								
 							var	searchRange = [];
-								for(var i=1;i<=100;i++){
+								for(var i=10;i<=100;i=i+10){
 									searchRange.push(i);
 								}			
 								$scope.resultsRange = searchRange;
