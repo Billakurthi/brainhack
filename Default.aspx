@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-4 col-sm-3">
                 <div class="profile-img">
-                    <img class="img img-responsive img-circle" src="assets/images/profile-img.png" alt="Vajrang" title="Vajrang">
+                    <img class="img img-responsive img-circle" src="assets/images/profile-img.png" alt="Vajrang" title="Vajrang"/>
                 </div>
             </div>
             <div class="col-xs-8 col-sm-9">
@@ -35,7 +35,7 @@
                     </p>
                     <div class="social-links-wrapper">
                         <ul class="social-links">
-                            <label>Social</label>
+                            
 
                             <li class="btn" data-toggle="tooltip" title="Professional Profile!" data-placement="bottom">
                                 <a href="https://www.linkedin.com/in/vajrang-billlakurthi" target="_blank">

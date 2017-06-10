@@ -6,7 +6,7 @@
 
      {
 
-        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=good%20night&limit=200&api_key=dc6zaTOxFJmzC';
+        var apiQ = 'http://api.giphy.com/v1/gifs/search?q=good%20night&limit=20&api_key=dc6zaTOxFJmzC';
 
         var result = function () {
 
