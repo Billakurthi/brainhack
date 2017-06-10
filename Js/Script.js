@@ -20,14 +20,14 @@
 								
 								
 							var	searchRange = [];
-								for(var i=10;i<=100;i=i+10){
+								for(var i=10;i<=300;i=i+100){
 									searchRange.push(i);
 								}			
 								$scope.resultsRange = searchRange;
 
 $scope.selectedName = "Search";
 
-			$scope.resultsLimit = {value : 30};		
+			$scope.resultsLimit = {value : 300};		
 		
         $scope.searchGiphyDB = function () {
             $scope.count++;
