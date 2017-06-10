@@ -13,13 +13,20 @@
             <button class="btn btn-default" type="button">Go!</button>
         </span>
     </div>--%>
-	
+	<!-- input group for select option -->
 	<div class="input-group">
 	<label for="sel1">Select list:</label>
 	<select class="form-control" ng-model="selectedName" ng-options="x for x in readEndPoints">
-</select>
-	
+	</select>
 	</div>
+	
+	<!-- input group for range option -->
+	<div class="input-group">
+	<label for="sel1">Select result count:</label>
+<input type="range" name="range" min="1" max="100" value="{{resultsLimit}}" onchange="rangeSuccess.value=value">
+            <output id="rangeSuccess">{{resultsLimit}}</output>
+	</div>
+	
         <!-- /input-group -->
         <div class="input-group">
             <asp:TextBox ID="inputGiphySearch" runat="server" class="form-control" ng-model="inputGiphySearch" required=required></asp:TextBox>

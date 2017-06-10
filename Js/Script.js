@@ -20,6 +20,8 @@
 
 $scope.selectedName = "Search";
 
+$scope.resultsLimit = 40;
+
 		
         $scope.searchGiphyDB = function () {
             $scope.count++;
