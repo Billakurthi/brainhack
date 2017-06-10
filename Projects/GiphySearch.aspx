@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div class="GSContainer" data-ng-controller="myCtrl">
+    <div class="GSContainer" data-ng-controller="giphySearchCtrl">
         Giphy Search Page{{count}}
     <%--search control--%>
         <%--    <div class="input-group">
@@ -17,7 +17,7 @@
         <div class="input-group">
             <asp:TextBox ID="inputGiphySearch" runat="server" class="form-control" ng-model="inputGiphySearch"></asp:TextBox>
             <span class="input-group-btn">
-                <asp:Button class="btn btn-de" runat="server" Text="Search Giphy" ng-click="searchGiphyDB()" OnClientClick="return false;" />
+                <asp:Button class="btn btn-success" runat="server" Text="Search Giphy" ng-click="searchGiphyDB()" OnClientClick="return false;" />
             </span>
         </div>
         <div class="row">
