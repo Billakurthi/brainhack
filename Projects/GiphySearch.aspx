@@ -23,8 +23,8 @@
 	<!-- input group for range option -->
 	<div class="input-group">
 	<label for="sel1">Select result count:</label>
-<input type="range" name="range" min="1" max="100" value="{{resultsLimit}}" onchange="rangeSuccess.value=value">
-            <output id="rangeSuccess">{{resultsLimit}}</output>
+	<input type="number" name="sel1" value="{{resultsLimit}}">
+          
 	</div>
 	
         <!-- /input-group -->
