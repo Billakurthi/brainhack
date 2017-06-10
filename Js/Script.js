@@ -11,12 +11,21 @@
         $scope.count = 0;
 		
 		$scope.readEndPoints = ["Search",
-"Trending",
-"Translate",
-"Random",
-"GIF by id",
-"GIFs by id",
-"Stickers"];
+								"Trending",
+								"Translate",
+								"Random",
+								"GIF by id",
+								"GIFs by id",
+								"Stickers"];
+								
+								
+							var	searchRange = [];
+								for(var i=1;i<=100;i++){
+									searchRange.push(i);
+								}
+								console.log(searchRange);
+								
+								$scope.resultsRange = searchRange;
 
 $scope.selectedName = "Search";
 

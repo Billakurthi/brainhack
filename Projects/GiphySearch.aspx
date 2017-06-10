@@ -23,10 +23,14 @@
 	<!-- input group for range option -->
 	<div class="input-group">
 	<label for="sel1">Select result count:</label>
+	<select>
+		<option value="">-- Birth Year --</option>
+		<option ng-repeat="n in resultsRange" ng-if="resultsRange">{{n}}</option>
+	</select>
 	<input type="number" name="sel1" value="{{resultsLimit}}">
           
 	</div>
-	
+	<a class="btn btn-default"href="whatsapp://send?text=Hello%20World!">Hello, world!</a>
         <!-- /input-group -->
         <div class="input-group">
             <asp:TextBox ID="inputGiphySearch" runat="server" class="form-control" ng-model="inputGiphySearch" required=required></asp:TextBox>
@@ -36,7 +40,7 @@
         </div>
         <div class="row">
 
-            <div class="col-xs-12 col-sm-4 col-md-2" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
+            <div class="col-xs-12 col-sm-4 col-md-2" ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
                 <img style="width: 100%; height: auto; overflow: hidden; display: inline-block;" src="{{result.images.downsized.url}}" alt="{{result.type}}" title="{{result.type}}" />
             </div>
 			
