@@ -9,6 +9,18 @@
 
     var giphySearchCtrl = function ($scope, giphySearchService) {
         $scope.count = 0;
+		
+		$scope.readEndPoints = ["Search",
+"Trending",
+"Translate",
+"Random",
+"GIF by id",
+"GIFs by id",
+"Stickers"];
+
+$scope.selectedName = "Search";
+
+		
         $scope.searchGiphyDB = function () {
             $scope.count++;
 			if(
@@ -17,7 +29,7 @@
 				(($scope.inputGiphySearch) != undefined)
 				){
 				
-				triggerSearch($scope.inputGiphySearch)
+				triggerSearch($scope.inputGiphySearch);
 			
 			}
 			

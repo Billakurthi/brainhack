@@ -13,13 +13,11 @@
 			
 			searchQuery = BASE_URL+ENDPOINT+'?q='+searchString+'&limit='+resultsLimit+'&api_key='+PUBLIC_KEY;
 
-
-
             return ($http.get(searchQuery)
                 .then(
 
                 function (response) {
-                    
+                    console.log(response.data.data);
                     return response.data.data;
 
                 })
