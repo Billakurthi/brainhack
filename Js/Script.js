@@ -17,17 +17,21 @@
 								"GIF by id",
 								"GIFs by id",
 								"Stickers"];
+
+		$scope.ratingOptions = ['y','g', 'pg', 'pg-13','r'];
 								
 								
 							var	searchRange = [];
-								for(var i=100;i<=300;i=i+100){
+								for(var i=10;i<=100;i=i+10){
 									searchRange.push(i);
 								}			
 								$scope.resultsRange = searchRange;
 
-$scope.selectedName = "Search";
+			$scope.selectedName = "Search";
 
-			$scope.resultsLimit = {value : 300};		
+			$scope.resultsLimit = {value : 30};	
+
+			$scope.selectRating = {value : 'y'};	
 		
         $scope.searchGiphyDB = function () {
             $scope.count++;
@@ -35,17 +39,17 @@ $scope.selectedName = "Search";
 				return 0;
 			}else if (($scope.inputGiphySearch).length != 0) {
 					var inputString = ($scope.inputGiphySearch).replace(/ /g, "+")
-				var d = $scope.resultsLimit.value;
-				triggerSearch(inputString,d);
+				
+				triggerSearch(inputString,$scope.resultsLimit.value,$scope.selectRating.value);
 			
 			}
 			
         };
 
-		var triggerSearch = function(searchString,d){
+		var triggerSearch = function(searchString,d,g){
 			
 			giphySearchService
-            .result(searchString,d)
+            .result(searchString,d,g)
             .then(function (recievedData) {
                 //initializing a promise to recieve the data in the future
             $scope.results = recievedData;

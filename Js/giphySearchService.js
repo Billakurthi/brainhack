@@ -8,11 +8,11 @@
 
         var searchQuery =""; 
 
-        var result = function (searchString,resultsLimit) {
+        var result = function (searchString,resultsLimit,searchRating) {
 			
-			console.log("resLimit"+resultsLimit+"--"+searchString);
+			console.log("resLimit"+resultsLimit+"--"+searchString+"--rating--"+searchRating);
 			
-			searchQuery = BASE_URL+ENDPOINT+'?q='+searchString+'&limit='+resultsLimit+'&api_key='+PUBLIC_KEY;
+			searchQuery = BASE_URL+ENDPOINT+'?q='+searchString+'&limit='+resultsLimit+'&rating='+searchRating+'&api_key='+PUBLIC_KEY;
 			console.log(searchQuery);
 
             return ($http.get(searchQuery)

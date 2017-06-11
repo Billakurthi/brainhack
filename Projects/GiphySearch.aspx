@@ -15,16 +15,21 @@
     </div>--%>
 	<!-- input group for select option -->
 	<div class="input-group">
-	<label for="sel1">Select list:</label>
-	<select class="form-control" ng-model="selectedName" ng-options="x for x in readEndPoints">
+	<label for="searchType">Select list:</label>
+	<select name="searchType" class="form-control" ng-model="selectedName" ng-options="x for x in readEndPoints">
 	</select>
 	</div>
 	
 	<!-- input group for range option -->
 	<div class="input-group">
-	<label for="sel1">Select result count:</label>
-	<select ng-model="resultsLimit.value" ng-change="searchGiphyDB()" ng-if="resultsRange" ng-options="x for x in resultsRange track by x">		
-		
+	<label for="searchLimit">Select result count:</label>
+	<select name="searchLimit" ng-model="resultsLimit.value" ng-change="searchGiphyDB()" ng-if="resultsRange" ng-options="x for x in resultsRange track by x">				
+	</select>
+
+    <!-- input group for range option -->
+	<div class="input-group">
+	<label for="selectSearchRating">Select result count:</label>
+	<select name="selectSearchRating" ng-model="selectRating.value" ng-change="searchGiphyDB()" ng-if="ratingOptions" ng-options="x for x in ratingOptions track by x">				
 	</select>
           
 	</div>
@@ -32,7 +37,7 @@
         <!-- /input-group -->
         <div class="input-group">
             <asp:TextBox ID="inputGiphySearch" runat="server" class="form-control" ng-model="inputGiphySearch" required=required></asp:TextBox>
-            <span class="input-group-btn">
+            <span class="input-group-btn">  
                 <asp:Button class="btn btn-success" runat="server" Text="Search Giphy" ng-click="searchGiphyDB()" OnClientClick="return false;" />
             </span>
         </div>
