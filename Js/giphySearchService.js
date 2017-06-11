@@ -26,8 +26,22 @@
                 );
         };
 
+        var getTrending = function(){
+
+            return ($http.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC')
+                .then(
+                function (response) {
+                    console.log("trending data"+response.data.data);
+                    return response.data.data;
+
+                })
+                );
+
+        }
+
         return {
-            result: result
+            result: result,
+            getTrending: getTrending
         };
 
     };
