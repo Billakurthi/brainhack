@@ -78,6 +78,9 @@
 
 	myApp.controller('giphySearchCtrl', ['$scope', 'giphySearchService', giphySearchCtrl]);
 
-
+myApp.config(function($compileProvider){
+   //other configuration code here
+   $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
+})
 
 })();

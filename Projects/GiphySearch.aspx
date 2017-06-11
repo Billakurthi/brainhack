@@ -55,7 +55,7 @@
                         <div class="col-xs-6 col-sm-1" ng-if="results" data-ng-repeat="result in results" style="margin-bottom:20px;">
                             <img style="width: 100%; height: 100%; overflow: none; display:block;" src="{{result.images.downsized.url}}" alt="{{result.type}}"
                                 title="{{result.type}}" />
-                                <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized.url}}"><i class="fa fa-whatsapp"></i></a>
+                                <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized.url}}" data-action="{{result.images.downsized.url}}"><i class="fa fa-whatsapp"></i></a>
                         </div>
 
 
