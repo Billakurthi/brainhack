@@ -59,8 +59,8 @@
         <div class="col-xs-12 col-sm-4" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
             <img style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.type}}"
                 title="{{result.type}}" />
-            <a class="btn btn-default" href="whatsapp://send?text={{result.images.original_mp4.url}}" data-action="{{result.images.original_mp4.url}}"><i class="fa fa-whatsapp"></i></a>
-            <a class="btn btn-primary" target="_blank" href="{{result.images.original_mp4.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
+            <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized_large.url}}" data-action="{{result.images.downsized_large.url}}"><i class="fa fa-whatsapp"></i></a>
+            <a class="btn btn-primary" target="_blank" href="{{result.images.downsized_large.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
         </div>
     </div>
 </asp:Content>
