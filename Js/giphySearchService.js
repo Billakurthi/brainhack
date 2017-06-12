@@ -6,42 +6,74 @@
 
      {
 
-        var searchQuery =""; 
+        var ApiCallUrl = "";
+        var endpoint = "";
 
-        var result = function (searchString,resultsLimit,searchRating) {
+
+        //GET SEARCH RESULTS
+        var getGifResults = function (searchString, resultsLimit, searchRating) {
+
+            endpoint = 'search';
+
+            try{
+                    if ($.trim(searchRating) != '') {
+                    searchRating = '&rating=' + searchRating;
+                } else {
+                        searchRating = $.trim(searchRating);
+                }
+            }
+            catch (ex) {
+                console.log(ex.message);
+            }
+						
+			ApiCallUrl = BASE_URL + endpoint + '?q=' + searchString + '&limit=' + resultsLimit + searchRating + '&api_key=' + PUBLIC_KEY;
+
+			console.log(ApiCallUrl);
+
+			return triggerApiCall(ApiCallUrl);
 			
-			console.log("resLimit"+resultsLimit+"--"+searchString+"--rating--"+searchRating);
-			
-			searchQuery = BASE_URL+ENDPOINT+'?q='+searchString+'&limit='+resultsLimit+'&rating='+searchRating+'&api_key='+PUBLIC_KEY;
-			console.log(searchQuery);
-
-            return ($http.get(searchQuery)
-                .then(
-
-                function (response) {
-                    console.log(response.data.data);
-                    return response.data.data;
-
-                })
-                );
         };
 
-        var getTrending = function(){
 
-            return ($http.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC')
-                .then(
-                function (response) {
-                    console.log("trending data"+response.data.data);
-                    return response.data.data;
 
-                })
-                );
+        //GET TRENDING RESULTS
+        var getGifResults = function (resultsLimit, searchRating) {
 
-        }
+            endpoint = 'trending';
+            if ((searchRating.trim()) != '') {
+                searchRating = '&rating=' + searchRating;
+            } else {
+                searchRating = searchRating.trim();
+            }
+
+            ApiCallUrl = BASE_URL + endpoint +'?'+ '&api_key=' + PUBLIC_KEY + searchRating + '&limit=' + resultsLimit;
+
+            console.log("resLimit" + resultsLimit + "--" + endpoint + "--rating--" + searchRating);
+            console.log(ApiCallUrl);
+
+            return triggerApiCall(ApiCallUrl);
+
+        };
+
+
+        //Single Api Call for all the results
+        var triggerApiCall = function (ApiCallUrl) {
+
+            return $http.get(ApiCallUrl)
+                    .then(function (response) {
+                        return response.data.data;
+                    })
+                    
+        };//end triggerApiCall
+
+
 
         return {
-            result: result,
-            getTrending: getTrending
+
+            //polymorphic function
+            //3- parameters search
+            //2- parameters trending
+            getGifResults: getGifResults
         };
 
     };
@@ -51,11 +83,7 @@
     myApp.factory('giphySearchService', ['$http', giphySearchService]);
 		
 	const PUBLIC_KEY = 'dc6zaTOxFJmzC';
-	const BASE_URL = 'http://api.giphy.com/v1/gifs/';
-	const ENDPOINT = 'search';
-	
-	
-	
+	const BASE_URL = 'http://api.giphy.com/v1/gifs/';	
 
 
 })();
