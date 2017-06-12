@@ -56,8 +56,8 @@
         <asp:Label runat="server" data-ng-model="totalResults" data-ng-if="totalResults">Found {{totalResults}} Results</asp:Label>
     <div class="row">
         
-        <div class="col-xs-6 col-sm-4" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
-            <img style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.type}}"
+        <div class="col-xs-12 col-sm-4" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
+            <img style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.fixed_height.url}}" alt="{{result.type}}"
                 title="{{result.type}}" />
             <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized.url}}" data-action="{{result.images.downsized.url}}"><i class="fa fa-whatsapp"></i></a>
             <a class="btn btn-primary" target="_blank" href="{{result.images.downsized.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
