@@ -8,12 +8,19 @@
 
 
 	var giphySearchCtrl = function ($scope, giphySearchService) {
-		$scope.count = 0;
+	    $scope.count = 0;
 
-		$scope.readEndPoints = ['Search', 'Trending'];
-		// , 'Translate', 'Random', 'GIF by id', 'GIFs by id', 'Stickers'
+	    $scope.readEndPoints = ['Search', 'Trending'];
+	    // , 'Translate', 'Random', 'GIF by id', 'GIFs by id', 'Stickers'
 
-		$scope.ratingOptions = ['y', 'g', 'pg', 'pg-13', 'r'];
+	    $scope.ratingOptions = {
+	        'All': ' ',
+	        'Cartoon': 'y',
+	        'General': 'g',
+	        'Parental Guidance': 'pg',
+	        '13+ Only': 'pg-13',
+	        'Restricted': 'r'
+	    };
 
 
 		var searchRange = [];
@@ -26,7 +33,7 @@
 
 		$scope.resultsLimit = { value: 30 };
 
-		$scope.selectRating = { value: 'y' };
+		$scope.selectRating = { value: ' ' };
 
 		$scope.searchGiphyDB = function () {
 			$scope.count++;
@@ -62,7 +69,8 @@
 			giphySearchService
 				.result(searchString, d, g)
 				.then(function (recievedData) {
-					//initializing a promise to recieve the data in the future
+				    //initializing a promise to recieve the data in the future
+				    $scope.totalResults = (parseInt(recievedData.length));
 					$scope.results = recievedData;
 				});
 
@@ -80,7 +88,8 @@
 
 myApp.config(function($compileProvider){
    //other configuration code here
-   $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|whatsapp):/);
+    
 })
 
 })();
