@@ -79,7 +79,7 @@
                             placeholder="Search for..."></asp:TextBox>
                         <span class="input-group-btn">
                             <button class="btn btn-success" runat="server" data-ng-click="searchGiphyDB()" onclientclick="return false;">
-                                <i class="fa fa-search"></i>
+                                <i class="fa fa-search">Search</i>
                             </button>
                         </span>
                     </div>

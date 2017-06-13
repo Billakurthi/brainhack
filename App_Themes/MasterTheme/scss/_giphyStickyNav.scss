@@ -28,7 +28,8 @@
 		  position: fixed;			
 			top: 0;
 			z-index: 1;
-			max-width:256px;
+			min-width:100%;
+			left:0;
 		}
 		/* .main {
 		  background: #f2f2e8;
