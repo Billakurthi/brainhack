@@ -39,6 +39,7 @@
         $scope.selectedRating = {
             value: 'all'
         };
+        $scope.totalResults = '';
 
 //call giphysearch onpage load
 
@@ -54,9 +55,10 @@
                 giphySearchService
                     .getGifResults(selectedEndpoint,$scope.resultsLimit.value, $scope.selectedRating.value,searchString)
                     .then(function (recievedData) {
-                        console.log("treding values" + recievedData);
+                       
+                        $scope.totalResults = (parseInt(recievedData.length));
                         $scope.results = recievedData;
-                        console.log($scope.results);
+                        
                     });
             } else if (selectedEndpoint == 'Search') {
 
@@ -72,6 +74,7 @@
                         .getGifResults(selectedEndpoint, $scope.resultsLimit.value, $scope.selectedRating.value,searchString)
                         .then(function (recievedData) {
                             //initializing a promise to recieve the data in the future
+                            
                             $scope.totalResults = (parseInt(recievedData.length));
                             $scope.results = recievedData;
                         });
@@ -79,10 +82,7 @@
                 }
 
             }
-
-
-
- }
+ };
 
         $scope.searchGiphyDB = function () {
 
@@ -90,7 +90,7 @@
                  triggerSearch();
         };
 
-        triggerSearch();
+ triggerSearch();
 
     };
 

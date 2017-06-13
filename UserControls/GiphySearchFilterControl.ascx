@@ -79,9 +79,8 @@
                             placeholder="Search for..." 
                             style="text-align:center;"></asp:TextBox>
                         <span class="input-group-btn">
-                            <button class="btn btn-success" runat="server" data-ng-click="searchGiphyDB()" onclientclick="return false;">
-                                <i class="fa fa-search">Search</i>
-                            </button>
+                            <asp:button class="btn btn-success" runat="server" text="Search" data-ng-click="searchGiphyDB()" onclientclick="return false;"/>                                
+                            
                         </span>
                     </div>
                 </div>
