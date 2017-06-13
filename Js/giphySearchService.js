@@ -2,56 +2,54 @@
 
     'use strict';
 
-    function giphySearchService($http)
-
-     {
+    function giphySearchService($http) {
 
         var ApiCallUrl = "";
         var endpoint = "";
 
+        var getGifResults = function (selectedEndPoint, resultsLimit, selectedRating, searchString) {
 
-        //GET SEARCH RESULTS
-        var getGifResults = function (searchString, resultsLimit, searchRating) {
 
-            endpoint = 'search';
-
-            try{
-                    if ($.trim(searchRating) != '') {
-                    searchRating = '&rating=' + searchRating;
+            try {
+                if ((selectedRating) != 'all') {
+                    selectedRating = '&rating=' + selectedRating;
                 } else {
-                        searchRating = $.trim(searchRating);
+                    selectedRating = '';
                 }
             }
             catch (ex) {
                 console.log(ex.message);
             }
-						
-			ApiCallUrl = BASE_URL + endpoint + '?q=' + searchString + '&limit=' + resultsLimit + searchRating + '&api_key=' + PUBLIC_KEY;
-
-			console.log(ApiCallUrl);
-
-			return triggerApiCall(ApiCallUrl);
-			
-        };
 
 
+            endpoint = selectedEndPoint.toLowerCase();
 
-        //GET TRENDING RESULTS
-        var getGifResults = function (resultsLimit, searchRating) {
+            if (endpoint == 'trending') {
 
-            endpoint = 'trending';
-            if ((searchRating.trim()) != '') {
-                searchRating = '&rating=' + searchRating;
-            } else {
-                searchRating = searchRating.trim();
+                //GET TRENDING RESULTS
+                ApiCallUrl = BASE_URL + endpoint + '?' + '&api_key=' + PUBLIC_KEY + selectedRating + '&limit=' + resultsLimit;
+
+                console.log("resLimit" + resultsLimit + "--" + endpoint + "--rating--" + selectedRating);
+                console.log(ApiCallUrl);
+
+                return triggerApiCall(ApiCallUrl);
+
+
+            } else if (endpoint == 'search') {
+
+
+                //GET SEARCH RESULTS
+
+
+                ApiCallUrl = BASE_URL + endpoint + '?q=' + searchString + '&limit=' + resultsLimit + selectedRating + '&api_key=' + PUBLIC_KEY;
+
+                console.log(ApiCallUrl);
+
+                return triggerApiCall(ApiCallUrl);
+
+
             }
 
-            ApiCallUrl = BASE_URL + endpoint +'?'+ '&api_key=' + PUBLIC_KEY + searchRating + '&limit=' + resultsLimit;
-
-            console.log("resLimit" + resultsLimit + "--" + endpoint + "--rating--" + searchRating);
-            console.log(ApiCallUrl);
-
-            return triggerApiCall(ApiCallUrl);
 
         };
 
@@ -60,19 +58,15 @@
         var triggerApiCall = function (ApiCallUrl) {
 
             return $http.get(ApiCallUrl)
-                    .then(function (response) {
-                        return response.data.data;
-                    })
-                    
+                .then(function (response) {
+                    return response.data.data;
+                })
+
         };//end triggerApiCall
 
 
 
         return {
-
-            //polymorphic function
-            //3- parameters search
-            //2- parameters trending
             getGifResults: getGifResults
         };
 
@@ -81,9 +75,9 @@
     var myApp = angular.module('myApp');
 
     myApp.factory('giphySearchService', ['$http', giphySearchService]);
-		
-	const PUBLIC_KEY = 'dc6zaTOxFJmzC';
-	const BASE_URL = 'http://api.giphy.com/v1/gifs/';	
+
+    const PUBLIC_KEY = 'dc6zaTOxFJmzC';
+    const BASE_URL = 'http://api.giphy.com/v1/gifs/';
 
 
 })();

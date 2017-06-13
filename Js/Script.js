@@ -11,7 +11,8 @@
         // , 'Translate', 'Random', 'GIF by id', 'GIFs by id', 'Stickers'
 
         $scope.ratingOptions = {
-            'All': ' ',
+            'All': 'all',
+            'Unrated':'unrated',
             'Cartoon': 'y',
             'General': 'g',
             'Parental Guidance': 'pg',
@@ -36,15 +37,13 @@
         };
 
         $scope.selectedRating = {
-            value: ' '
+            value: 'all'
         };
 
+//call giphysearch onpage load
 
+ var triggerSearch = function(){
 
-
-        $scope.searchGiphyDB = function () {
-
-            $scope.count++;
 
             var selectedEndpoint = String($scope.selectedEndpoint.value);
 
@@ -53,7 +52,7 @@
 
             if (selectedEndpoint == 'Trending') {
                 giphySearchService
-                    .getGifResults($scope.resultsLimit.value, $scope.selectedRating.value)
+                    .getGifResults(selectedEndpoint,$scope.resultsLimit.value, $scope.selectedRating.value,searchString)
                     .then(function (recievedData) {
                         console.log("treding values" + recievedData);
                         $scope.results = recievedData;
@@ -70,7 +69,7 @@
                     var searchString = ($scope.inputGiphySearch).replace(/ /g, "+");
 
                     giphySearchService
-                        .getGifResults(searchString, $scope.resultsLimit.value, $scope.selectedRating.value)
+                        .getGifResults(selectedEndpoint, $scope.resultsLimit.value, $scope.selectedRating.value,searchString)
                         .then(function (recievedData) {
                             //initializing a promise to recieve the data in the future
                             $scope.totalResults = (parseInt(recievedData.length));
@@ -83,12 +82,22 @@
 
 
 
+ }
+
+        $scope.searchGiphyDB = function () {
+
+                 $scope.count++;
+                 triggerSearch();
         };
+
+        triggerSearch();
+
     };
 
 
     myApp.controller('giphySearchCtrl', ['$scope', 'giphySearchService', giphySearchCtrl]);
 
+   
     myApp.config(function ($compileProvider) {
         //other configuration code here
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|whatsapp):/);
