@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NavigationControl.ascx.cs" Inherits="NavigationControl" %>
 
-<nav class="navbar navbar-default navbar-top">
+<nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -14,7 +14,6 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
             <%--make navigation with repeater--%>
             <asp:Repeater ID="navBar" runat="server" OnItemDataBound="navBar_OnItemDataBound">
                 <HeaderTemplate>
@@ -29,28 +28,10 @@
                 </ItemTemplate>
                 <FooterTemplate></ul></FooterTemplate>
             </asp:Repeater>
-
-            <%--<ul class="nav navbar-nav">
-                <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="../../GiphySearch.aspx">Giphy</a></li>
-            </ul>--%>
-           <%-- <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" NodeIndent="10" ShowExpandCollapse="False">
-                <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="0px" NodeSpacing="0px" VerticalPadding="0px" />
-                <ParentNodeStyle Font-Bold="False" />
-                <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
-            </asp:TreeView>
-
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />--%>
-
-
-                
-  
-
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.container -->
 </nav>
 
 

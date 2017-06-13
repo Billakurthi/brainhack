@@ -91,4 +91,10 @@ body { background-color: #777; }
   ul.timeline > li > .timeline-panel:before { border-left-width: 0; border-right-width: 15px; left: -15px; right: auto; }
   ul.timeline > li > .timeline-panel:after { border-left-width: 0; border-right-width: 14px; left: -14px; right: auto; } }
 
+.filter-container li { padding: 5px; }
+
+.selectSearchLimit, .selectSearchRating, .selectEndPoint { padding: 5px; width: 200px; }
+
+.giphy-filter-container label { width: 65px; text-align: right; }
+
 /*# sourceMappingURL=global.css.map */

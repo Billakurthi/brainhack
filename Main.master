@@ -28,7 +28,7 @@
 </head>
 <body data-ng-app="myApp">
     <form id="globalForm" runat="server">
-        <uc1:NavigationControl runat="server" ID="NavigationControl" />
+        
         <div class="wrapper container">
           <%--child pages container--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -36,6 +36,8 @@
             <%--navigation Control--%> 
             
         </div>
+
+        <uc1:NavigationControl runat="server" ID="NavigationControl" />
         
 
        

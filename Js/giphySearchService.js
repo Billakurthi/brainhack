@@ -16,10 +16,10 @@
             endpoint = 'search';
 
             try{
-                    if ($.trim(searchRating) != '') {
+                if ((searchRating) != '') {
                     searchRating = '&rating=' + searchRating;
                 } else {
-                        searchRating = $.trim(searchRating);
+                    searchRating = searchRating;
                 }
             }
             catch (ex) {
@@ -40,10 +40,10 @@
         var getGifResults = function (resultsLimit, searchRating) {
 
             endpoint = 'trending';
-            if ((searchRating.trim()) != '') {
+            if ((searchRating) != '') {
                 searchRating = '&rating=' + searchRating;
             } else {
-                searchRating = searchRating.trim();
+                searchRating = searchRating;
             }
 
             ApiCallUrl = BASE_URL + endpoint +'?'+ '&api_key=' + PUBLIC_KEY + searchRating + '&limit=' + resultsLimit;
