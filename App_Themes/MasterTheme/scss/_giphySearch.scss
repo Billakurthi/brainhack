@@ -8,8 +8,7 @@
 .searchContainer{
 	margin-bottom:10px;
 }
-.giphy-filter-container{
-	
+.giphy-filter-container{	
 
 		ul{
 			
@@ -63,4 +62,11 @@
 	padding:5px;
 	width: 150px;
 	margin-left:10px;
+}
+
+.giphy-image-container{
+	@media (min-width : $screen-sm-min){
+		height: 200px;		
+	}
+	
 }

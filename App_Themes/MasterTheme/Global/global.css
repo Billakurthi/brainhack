@@ -113,6 +113,8 @@ body { background-color: #777; }
 
 .selectEndPoint { padding: 5px; width: 150px; margin-left: 10px; }
 
+@media (min-width: 768px) { .giphy-image-container { height: 200px; } }
+
 .GSContainer { /* * { box-sizing: border-box; } */ /* body { margin: 0; padding-top: 250px; } header { height: 300px; padding-top: 50px; background: #f07057; } */ /* .main { background: #f2f2e8; padding: 110px 50px 50px; column-count: 2; column-gap: 40px; } */ }
 
 .GSContainer .main-nav, .GSContainer .main { position: relative; }

@@ -57,10 +57,13 @@
         <div class="main">
             <div class="row ">
                 <div class="col-xs-12  col-sm-3" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
-                    <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.slug}}"
+                    <div class="giphy-image-container">
+                    <img class="img-thumbnail" style="width: auto; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.slug}}"
                         title="{{result.type}}" />
+                    </div>
                     <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized_large.url}}" data-action="{{result.images.downsized_large.url}}"><i class="fa fa-whatsapp"></i></a>
                     <a class="btn btn-default" target="_blank" href="{{result.images.downsized_large.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
+                   
                 </div>
             </div>
         </div>
