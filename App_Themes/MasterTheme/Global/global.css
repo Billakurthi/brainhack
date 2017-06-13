@@ -18,7 +18,7 @@ a, a:hover, a:active { color: #FFF; cursor: pointer; }
 
 body { background-color: #777; }
 
-.wrapper { min-width: 320px; }
+.wrapper { min-width: 320px; margin-bottom: 60px; }
 
 .container { background-color: #fff; }
 
