@@ -111,10 +111,10 @@
         $(window).scroll(function () {
             if ($(this).scrollTop() > hdr) {
                 mn.addClass(mns);
-                console.log("added function");
+                
             } else {
                 mn.removeClass(mns);
-                console.log("remove function");
+                
             }
         });
 

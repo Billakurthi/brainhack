@@ -119,6 +119,6 @@ body { background-color: #777; }
 
 .GSContainer .main-nav { background: #fff; /* z-index: 150; */ /*  margin-bottom: -80px; */ box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4); }
 
-.GSContainer header, .GSContainer .main-nav-scrolled { position: fixed; top: 0; z-index: 1; }
+.GSContainer header, .GSContainer .main-nav-scrolled { position: fixed; top: 0; z-index: 1; max-width: 256px; }
 
 /*# sourceMappingURL=global.css.map */
