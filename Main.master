@@ -30,26 +30,7 @@
 <body data-ng-app="myApp">
     <form id="globalForm" runat="server">
 
-        <%--whatsapp share code--%>
-        <a id="share_whatsapp" onclick="open_whatsapp()">Share with Whatsapp</a>
-
-        <script>
-            function open_whatsapp() {
-                $.ajax({
-                    type: 'HEAD',
-                    url: 'whatsapp://send?text=text=Hello%20World!',
-                    success: function () {
-                        window.location = 'whatsapp://send?text=text=Hello%20World!';
-                    },
-                    error: function () {
-                        alert("Whatspp not installed");
-                    }
-                });
-            }
-        </script>
-
-        <%--whatsapp share code--%>
-
+        
         <div class="wrapper container">
             <%--child pages container--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -58,12 +39,6 @@
         </div>
 
         <uc1:NavigationControl runat="server" ID="NavigationControl" />
-
-
-
-
-
-
 
 
     </form>
