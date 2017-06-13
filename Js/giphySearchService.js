@@ -10,11 +10,19 @@
         var getGifResults = function (selectedEndPoint, resultsLimit, selectedRating, searchString) {
 
 
+<<<<<<< HEAD
             try {
                 if ((selectedRating) != 'all') {
                     selectedRating = '&rating=' + selectedRating;
                 } else {
                     selectedRating = '';
+=======
+            try{
+                if ((searchRating) != '') {
+                    searchRating = '&rating=' + searchRating;
+                } else {
+                    searchRating = searchRating;
+>>>>>>> 6f50402cf62cd9cec0d2b56e3f770d66a37af811
                 }
             }
             catch (ex) {
@@ -32,6 +40,7 @@
                 console.log("resLimit" + resultsLimit + "--" + endpoint + "--rating--" + selectedRating);
                 console.log(ApiCallUrl);
 
+<<<<<<< HEAD
                 return triggerApiCall(ApiCallUrl);
 
 
@@ -39,6 +48,14 @@
 
 
                 //GET SEARCH RESULTS
+=======
+            endpoint = 'trending';
+            if ((searchRating) != '') {
+                searchRating = '&rating=' + searchRating;
+            } else {
+                searchRating = searchRating;
+            }
+>>>>>>> 6f50402cf62cd9cec0d2b56e3f770d66a37af811
 
 
                 ApiCallUrl = BASE_URL + endpoint + '?q=' + searchString + '&limit=' + resultsLimit + selectedRating + '&api_key=' + PUBLIC_KEY;

@@ -53,6 +53,7 @@ body{
 }
 .wrapper{
   min-width: 320px;
+  margin-bottom:60px;
 }
 .container{
 
@@ -86,7 +87,6 @@ background-color: #fff;
 .contact-details {
 
 span{
-
 
     @media (max-width : $screen-sm-min ){
 display: inline-block;
