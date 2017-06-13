@@ -18,13 +18,13 @@
       if (endpoint == 'trending') {
         //GET TRENDING RESULTS
         ApiCallUrl = BASE_URL + endpoint + '?' + '&api_key=' + PUBLIC_KEY + selectedRating + '&limit=' + resultsLimit;
-        console.log('resLimit' + resultsLimit + '--' + endpoint + '--rating--' + selectedRating);
-        console.log(ApiCallUrl);
+        // console.log('resLimit' + resultsLimit + '--' + endpoint + '--rating--' + selectedRating);
+        // console.log(ApiCallUrl);
         return triggerApiCall(ApiCallUrl);
       } else if (endpoint == 'search') {
         //GET SEARCH RESULTS
         ApiCallUrl = BASE_URL + endpoint + '?q=' + searchString + '&limit=' + resultsLimit + selectedRating + '&api_key=' + PUBLIC_KEY;
-        console.log(ApiCallUrl);
+        //console.log(ApiCallUrl);
         return triggerApiCall(ApiCallUrl);
       }
     };
@@ -38,7 +38,10 @@
       getGifResults: getGifResults
     };
   };
+
+  //initialize app
   var myApp = angular.module('myApp');
+  //initialize service with factory
   myApp.factory('giphySearchService', [
     '$http',
     giphySearchService
