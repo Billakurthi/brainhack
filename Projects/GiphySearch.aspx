@@ -5,13 +5,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="GSContainer" data-ng-controller="giphySearchCtrl">
 
-        <uc1:giphysearchfiltercontrol runat="server" id="GiphySearchFilterControl" />
+        <uc1:GiphySearchFilterControl runat="server" ID="GiphySearchFilterControl" />
 
 
-       <%-- <div class="row">
+        <%-- <div class="row">
     
             <div class="col-xs-6">
                 <div class="input-group">
@@ -54,12 +54,14 @@
        
         </div>--%>
         <asp:Label runat="server" data-ng-model="totalResults" data-ng-if="totalResults">Found {{totalResults}} Results</asp:Label>
-        <div class="row">
-            <div class="col-xs-12  col-sm-3" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
-                <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.type}}"
-                    title="{{result.type}}" />
-                <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized_large.url}}" data-action="{{result.images.downsized_large.url}}"><i class="fa fa-whatsapp"></i></a>
-                <a class="btn btn-default" target="_blank" href="{{result.images.downsized_large.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
+        <div class="main">
+            <div class="row ">
+                <div class="col-xs-12  col-sm-3" data-ng-if="results" data-ng-repeat="result in results" style="margin-bottom: 20px;">
+                    <img class="img-thumbnail img-responsive" style="width: 100%; height: 100%; overflow: hidden; display: block;" src="{{result.images.downsized.url}}" alt="{{result.type}}"
+                        title="{{result.type}}" />
+                    <a class="btn btn-default" href="whatsapp://send?text={{result.images.downsized_large.url}}" data-action="{{result.images.downsized_large.url}}"><i class="fa fa-whatsapp"></i></a>
+                    <a class="btn btn-default" target="_blank" href="{{result.images.downsized_large.url}}" data-download="{{result.slug}}"><i class="fa fa-download"></i></a>
+                </div>
             </div>
         </div>
     </div>

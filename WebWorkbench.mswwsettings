@@ -3,7 +3,7 @@
   <file name="global.scss">
     <setting name="Compile">False</setting>
     <setting name="Minify">True</setting>
-    <setting name="OutputFolder" />
+    <setting name="OutputFolder"></setting>
     <setting name="IgnoreWarnings">True</setting>
     <setting name="IgnoreErrors">True</setting>
     <setting name="CompileStyle">Nested</setting>

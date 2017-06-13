@@ -1,5 +1,5 @@
 ﻿//Declaring an IFFE function
-(function () {
+(function ($) {
     'use strict';
 
     var myApp = angular.module('myApp', []);
@@ -95,4 +95,32 @@
 
     })
 
-})();
+    //code for sticky navigation
+
+    //jquery code
+
+
+    $(document).ready(function () {
+        
+
+        var mn = $(".GSstickyNav"),
+        mns = "main-nav-scrolled",
+        hdr = $('.main-nav').height();
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > hdr) {
+                mn.addClass(mns);
+                console.log("added function");
+            } else {
+                mn.removeClass(mns);
+                console.log("remove function");
+            }
+        });
+
+    });
+
+
+
+
+})(jQuery);

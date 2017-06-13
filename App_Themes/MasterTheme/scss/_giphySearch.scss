@@ -1,23 +1,66 @@
-.filter-container{  
+.GSContainer {
+	
+	nav{
+		margin-bottom:10px;
+	}
+}
 
-    li{ 
-        
-        padding:5px;
-    }
+.searchContainer{
+	margin-bottom:10px;
+}
+.giphy-filter-container{
+	
+
+		ul{
+			
+			@media (min-width : $screen-sm-min){
+		margin-top:10px;		
+	}
+
+				li{ 
+				
+					padding:5px;
+				}
+			}	
 
 }
 .selectSearchLimit,
-.selectSearchRating,
-.selectEndPoint{ 
+.selectSearchRating{ 
     padding:5px;
 	width: 200px;
+	margin-left:10px;
+	@media (min-width : $screen-sm-min){
+		width:130px;		
+	}
 }
 
 .giphy-filter-container{
-	label{
-		
+	label{		
 		width:65px;
 		text-align:right;
+		vertical-align: middle;
+		
+		@media (min-width : $screen-sm-min){
+		
+		width:50px;
+	}
+		
 	}
 	
+}
+
+.endpointContainer{
+	padding:5px;
+	width: 293px;
+	margin: 10px auto 0;	
+	
+	@media (min-width : $screen-sm-min){
+		width: 245px;		
+	}
+}
+
+.selectEndPoint{
+	padding:5px;
+	width: 150px;
+	margin-left:10px;
 }
